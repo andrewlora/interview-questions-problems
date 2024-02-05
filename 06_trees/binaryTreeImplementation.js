@@ -62,14 +62,12 @@ class BinarySearchTree {
             //if parent > current value, make current left child a child of parent
             if (currentNode.value < parentNode.value) {
               parentNode.left = currentNode.left;
-
               //if parent < current value, make left child a right child of parent
             } else if (currentNode.value > parentNode.value) {
               parentNode.right = currentNode.left;
             }
           }
-
-          //Option 2: Right child which doesnt have a left child
+          //Option 2: Right child which doesn't have a left child
         } else if (currentNode.right.left === null) {
           currentNode.right.left = currentNode.left;
           if (parentNode === null) {
@@ -78,13 +76,11 @@ class BinarySearchTree {
             //if parent > current, make right child of the left the parent
             if (currentNode.value < parentNode.value) {
               parentNode.left = currentNode.right;
-
               //if parent < current, make right child a right child of the parent
             } else if (currentNode.value > parentNode.value) {
               parentNode.right = currentNode.right;
             }
           }
-
           //Option 3: Right child that has a left child
         } else {
           //find the Right child's left most child
@@ -94,12 +90,10 @@ class BinarySearchTree {
             leftmostParent = leftmost;
             leftmost = leftmost.left;
           }
-
           //Parent's left subtree is now leftmost's right subtree
           leftmostParent.left = leftmost.right;
           leftmost.left = currentNode.left;
           leftmost.right = currentNode.right;
-
           if (parentNode === null) {
             this.root = leftmost;
           } else {
@@ -125,6 +119,7 @@ tree.insert(170);
 tree.insert(15);
 tree.insert(1);
 // tree.remove(170);
+console.log(JSON.stringify(traverse(tree.root)));
 console.log(JSON.stringify(traverse(tree.root)));
 // console.log(tree.lookup(20));
 //     9
