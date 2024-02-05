@@ -16,16 +16,16 @@
 
 let containsCommonItem = (array1, array2) => {
   if (!array1 || array1.length === 0)
-    return console.log("Array1 should not be empty");
+    return console.log('Array1 should not be empty');
   if (!array2 || array2.length === 0)
-    return console.log("Array2 should not be empty");
+    return console.log('Array2 should not be empty');
   for (i = 0; i < array1.length; i++) {
     for (j = 0; j < array2.length; j++) {
       console.log(array1[i], array2[j]);
-      if (array1[i] === array2[j]) return console.log("result", true);
+      if (array1[i] === array2[j]) return console.log('result', true);
     }
   }
-  return console.log("result", false);
+  return console.log('result', false);
 };
 // O(n^2) Quadratic Time
 // O(1) Space complexity
@@ -42,9 +42,9 @@ let containsCommonItem2 = (array1, array2) => {
   }
   console.log(map);
   for (let i = 0; i < array1.length; i++) {
-    if (map[array2[i]]) return console.log("result", true);
+    if (map[array2[i]]) return console.log('result', true);
   }
-  return console.log("result", false);
+  return console.log('result', false);
 };
 // O(a+b) Time Complexity
 // O(a) Space Complexity
@@ -55,4 +55,4 @@ let containsCommonItem3 = (array1, array2) => {
   return array1.some((item) => array2.includes(item));
 };
 
-console.log(containsCommonItem3(["a", "b", "c", "z"], ["m", "y", "p"]));
+console.log(containsCommonItem3(['a', 'b', 'c', 'z'], ['m', 'y', 'p']));
