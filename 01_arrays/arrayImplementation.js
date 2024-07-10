@@ -1,7 +1,7 @@
 class MyArray {
   constructor() {
     this.length = 0;
-    this.data = {};
+    this.data = [];
   }
 
   get(index) {
@@ -51,14 +51,14 @@ class MyArray {
 
 const newArray = new MyArray();
 // console.log(newArray.get(0));
-newArray.push("a");
-newArray.push("b");
-newArray.push("c");
-newArray.push("d");
-newArray.push("e");
+newArray.push('a');
+newArray.push('b');
+newArray.push('c');
+newArray.push('d');
+newArray.push('e');
 console.log(newArray);
 // console.log(newArray.pop());
 
 // newArray.delete(1);
-newArray.insert("hello", 10);
+newArray.insert('hello', 10);
 console.log(newArray);

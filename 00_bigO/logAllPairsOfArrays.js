@@ -10,4 +10,4 @@ function logAllPairsOfArray(array) {
   }
 }
 
-logAllPairsOfArray(boxes);
+console.log(logAllPairsOfArray(boxes));

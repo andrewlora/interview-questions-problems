@@ -1,7 +1,29 @@
-const numbers = [1, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59];
+function binarySearch(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
 
-function binarySearch(array, num) {
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
 
+    if (arr[mid] === target) {
+      return mid; // Target found, return the index
+    } else if (arr[mid] < target) {
+      low = mid + 1; // Search in the right half
+    } else {
+      high = mid - 1; // Search in the left half
+    }
+  }
+
+  return -1; // Target not found
 }
 
-console.log(binarySearch(numbers, 37));
+// Example usage
+let array = [2, 3, 4, 10, 40];
+let target = 10;
+let result = binarySearch(array, target);
+
+if (result !== -1) {
+  console.log(`Element is present at index ${result}`);
+} else {
+  console.log('Element is not present in array');
+}

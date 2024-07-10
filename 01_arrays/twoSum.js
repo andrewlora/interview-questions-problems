@@ -32,7 +32,7 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function (nums, target) {
+var twoSum1 = function (nums, target) {
   const finalArray = [];
   const objIndices = {};
 
@@ -48,4 +48,42 @@ var twoSum = function (nums, target) {
   return finalArray;
 };
 
-console.log(twoSum([3, 2, 4], 6));
+// console.log(twoSum1([3, 8, 1, 11, 2, 4, 7], 6));
+
+/**
+ * Problem: Given an array of integers nums and an integer target,
+ * return indices of the two numbers such that they add up to target.
+ *
+ * @param {*} nums
+ * @param {*} target
+ * @return {*}
+ */
+function twoSum2(nums, target) {
+  let map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    console.log(map);
+    let complement = target - nums[i];
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    map.set(nums[i], i);
+  }
+  return [];
+}
+
+// Example usage:
+// console.log(twoSum2([0, 4, 23, 2, 7, 11, 15], 9)); // Output: [3, 4]
+
+const twoSum3 = (nums, target) => {
+  let list = {};
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+    if (list[complement]) return 'indexes are ' + list[complement] + '-' + i;
+    list[nums[i]] = i;
+  }
+
+  return list;
+};
+
+// Example usage:
+console.log(twoSum3([3, 4, 23, 2, 1, 11, 5], 9)); // Output: [3, 4]

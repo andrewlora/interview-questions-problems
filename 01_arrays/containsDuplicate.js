@@ -56,5 +56,13 @@ var containsDuplicate2 = (numbers) => {
   return 'There is not duplicated numbers';
 };
 
-// console.log(containsDuplicate(numbers));
-console.log(containsDuplicate2(numbers));
+console.time('a');
+console.log(containsDuplicate(numbers));
+console.timeEnd('a');
+
+let t1 = performance.now();
+console.log(containsDuplicate(numbers));
+let t2 = performance.now();
+console.log(t2 - t1);
+
+//console.log(containsDuplicate2(numbers));

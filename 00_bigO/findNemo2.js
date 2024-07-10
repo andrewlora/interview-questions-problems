@@ -14,14 +14,14 @@ const everyone = [
   'hank',
 ];
 const large = new Array(100000000);
-large[100000] = 'nemo';
+large[1000000] = 'nemo';
 
 function findNemo2(fish) {
   let t0 = performance.now();
   for (let i = 0; i < fish.length; i++) {
     if (fish[i] === 'nemo') {
       console.log('Found NEMO!', i);
-      break;
+      //break;
     }
   }
   let t1 = performance.now();
@@ -29,4 +29,4 @@ function findNemo2(fish) {
 }
 
 // findNemo2(everyone);
-findNemo2(large);
+console.log(findNemo2(large));
