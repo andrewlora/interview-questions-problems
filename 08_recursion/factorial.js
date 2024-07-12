@@ -4,8 +4,8 @@
 //ANSWER:
 
 function findFactorialRecursive(number) {
-  if (number === 2) {
-    return 2;
+  if (number === 0) {
+    return 1;
   }
   return number * findFactorialRecursive(number - 1);
 }
@@ -22,8 +22,15 @@ function findFactorialIterative(number) {
   return answer;
 }
 
-findFactorialIterative(5);
-findFactorialRecursive(5);
+// findFactorialIterative(5);
+console.log(findFactorialRecursive(3));
 
 // If you want, try to add a base case condition for the recursive solution
 // if the parameter given is less than 2
+
+function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+}
+
+// console.log(factorial(5)); // Output: 120

@@ -37,7 +37,14 @@ function fibonacciMaster2(n) {
 
 const fasterFib = fibonacciMaster();
 
-console.log("Slow", fibonacci(35));
-console.log("DP", fasterFib(100));
-console.log("DP2", fibonacciMaster2(100));
-console.log("we did " + calculations + " calculations");
+console.log('Slow', fibonacci(35));
+console.log('DP', fasterFib(100));
+console.log('DP2', fibonacciMaster2(100));
+console.log('we did ' + calculations + ' calculations');
+
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(6)); // Output: 8

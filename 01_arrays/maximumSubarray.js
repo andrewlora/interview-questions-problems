@@ -22,7 +22,9 @@
 // 1 <= nums.length <= 105
 // -104 <= nums[i] <= 104
 
-// Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+// Follow up: If you have figured out the O(n) solution,
+// try coding another solution using the divide and conquer approach,
+// which is more subtle.
 
 /**
  * @param {number[]} nums
@@ -33,11 +35,11 @@ var maxSubArray = function (nums) {
   let intMax = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
-    const intSuma = arrSums[i - 1] + nums[i];
+    const intSum = arrSums[i - 1] + nums[i];
 
-    if (intSuma > nums[i]) {
-      arrSums.push(intSuma);
-      intMax = intMax > intSuma ? intMax : intSuma;
+    if (intSum > nums[i]) {
+      arrSums.push(intSum);
+      intMax = intMax > intSum ? intMax : intSum;
     } else {
       arrSums.push(nums[i]);
       intMax = intMax > nums[i] ? intMax : nums[i];
@@ -47,4 +49,57 @@ var maxSubArray = function (nums) {
   return intMax;
 };
 
-console.log(maxSubArray([-2, 1]));
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+// Maximum Subarray
+// Problem: Given an integer array nums,
+// find the contiguous subarray (containing at least one number)
+// which has the largest sum and return its sum.
+
+function maxSubArray2(nums) {
+  let maxEndingHere = nums[0];
+  let maxSoFar = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    maxEndingHere = Math.max(nums[i], maxEndingHere + nums[i]);
+    maxSoFar = Math.max(maxSoFar, maxEndingHere);
+  }
+  return maxSoFar;
+}
+
+// Example usage:
+// console.log(maxSubArray2([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // Output: 6
+// i=0
+// maxEndingHere = -2
+// maxSoFar = -2
+// -------------------------------------------
+// i=1
+// maxEndingHere = (1 > (-2+1) = -1)) = 1
+// maxSoFar = -2 > 1 = 1
+// -------------------------------------------
+// i=2
+// maxEndingHere = (-3 > (1+(-3)) = -2)) = -2
+// maxSoFar = 1 > -2 = 1
+// -------------------------------------------
+// i=3
+// maxEndingHere = (4 > (-2+4) = 2)) = 4
+// maxSoFar = 1 > 4 = 4
+// -------------------------------------------
+// i=4
+// maxEndingHere = (-1 > (4+(-1) = 3)) = 3
+// maxSoFar = 4 > 3 = 4
+// -------------------------------------------
+// i=5
+// maxEndingHere = (2 > (3+2 = 5)) = 5
+// maxSoFar = 4 > 5 = 5
+// -------------------------------------------
+// i=6
+// maxEndingHere = (1 > (5+1 = 6)) = 6
+// maxSoFar = 5 > 6 = 6
+// -------------------------------------------
+// i=7
+// maxEndingHere = (-5 > (6+(-5)) = 1)) = 1
+// maxSoFar = 6 > 1 = 6
+// -------------------------------------------
+// i=8
+// maxEndingHere = (4 > (1+4 = 5)) = 5
+// maxSoFar = 6 > 5 = 6
