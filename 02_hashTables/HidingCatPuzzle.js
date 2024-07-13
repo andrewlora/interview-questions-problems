@@ -12,14 +12,14 @@ const hidingCatPuzzle = (numBoxes) => {
   let catIndex;
   let firstDay = true;
   let getBoxes = () => {
-    for (let i = 0; i <= numBoxes - 1; i++) {
+    for (let i = 0; i < numBoxes; i++) {
       boxes[i] = 0;
     }
   };
   let catMoves = () => {
     if (firstDay) {
-      let random = Math.floor(Math.random() * numBoxes) + 1;
-      catIndex = random - 1;
+      let random = Math.floor(Math.random() * numBoxes);
+      catIndex = random;
     } else {
       boxes[catIndex] = 0;
       if (catIndex === 0 && numBoxes > 1) {
@@ -65,7 +65,7 @@ const hidingCatPuzzle = (numBoxes) => {
   return findCat;
 };
 
-let findCat = hidingCatPuzzle(10);
+let findCat = hidingCatPuzzle(5);
 console.log('findCat monday:', findCat());
 console.log('findCat tuesday:', findCat());
 console.log('findCat wednesday:', findCat());

@@ -12,7 +12,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/02_hashTables/firstRecurringCharacter.js"
+            "program": "${workspaceFolder}/02_hashTables/HidingCatPuzzle.js"
         }
     ]
 }
