@@ -19,6 +19,23 @@
 
 // Follow up: Could you minimize the total number of operations done?
 
+const moveZeroes1 = (nums) => {
+  let index = nums.length;
+  for (let i = 0; i < index; i++) {
+    if (nums[i] === 0) {
+      nums[nums.length] = nums[i];
+      nums.splice(i, 1);
+      i--;
+      index--;
+    }
+  }
+  return nums;
+};
+console.log(moveZeroes1([0, 1, 0, 3, 12, 4, 9, 0]));
+// [0, 1, 0, 3, 12]
+// [1, 0, 3, 12, 0]
+// [1, 0, 3, 12, 0]
+
 var moveZeroes = function (nums) {
   let finalArray = [];
 
@@ -33,4 +50,4 @@ var moveZeroes = function (nums) {
   return finalArray;
 };
 
-console.log(moveZeroes([0, 1, 0, 3, 12]));
+// console.log(moveZeroes([0, 1, 0, 3, 12]));

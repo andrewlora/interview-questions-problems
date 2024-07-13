@@ -33,4 +33,4 @@ function LongestWord(sen) {
 }
 
 // keep this function call here
-console.log(LongestWord(readline()));
+console.log(LongestWord('The quick brown fox jumped over the lazy dog'));
