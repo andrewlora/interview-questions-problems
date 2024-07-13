@@ -8,10 +8,11 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+            "runtimeVersion": "20.15.1",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/10_searching/binarySearch.js"
+            "program": "${workspaceFolder}/01_arrays/fizzBuzz.js"
         }
     ]
 }
