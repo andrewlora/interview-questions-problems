@@ -12,7 +12,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/02_hashTables/HidingCatPuzzle.js"
+            "program": "${workspaceFolder}/03_linkedLists/linkedListImplementation.js"
         }
     ]
 }

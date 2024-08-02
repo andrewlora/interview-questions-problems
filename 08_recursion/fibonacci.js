@@ -13,7 +13,7 @@ function fibonacciIterative(n) {
   return arr[n];
 }
 // O(n-2) = O(n)
-fibonacciIterative(3);
+// fibonacciIterative(3);
 
 function fibonacciRecursive(n) {
   if (n < 2) {
@@ -22,7 +22,7 @@ function fibonacciRecursive(n) {
   return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 }
 // O(2^n)
-console.log(fibonacciRecursive(9));
+// console.log(fibonacciRecursive(9));
 
 function fibonacci(n) {
   if (n <= 1) return n;
